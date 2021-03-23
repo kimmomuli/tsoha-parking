@@ -13,3 +13,6 @@ Sovelluksessa näkyy vapaasti käyttäjien lisättyjä parkkipaikkoja ja niihin 
 8. Ylläpitäjä voi poistaa käyttäjän.
 9. Käyttäjä voi muokata parkkipaikkaan liittyviä tietoja.
 10. Ylläpitäjä voi muuttaa onko parkkipaikka jollakin käytössä.
+
+:+1:
+test
