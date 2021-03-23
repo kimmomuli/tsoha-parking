@@ -1,5 +1,6 @@
 # Parking
 
+### Sovelluksen idea
 Sovelluksessa näkyy vapaasti käyttäjien lisättyjä parkkipaikkoja ja niihin liittyvää tietoa. Jokainen käyttäjä on peruskäyttäjä tai ylläpitäjä.
 
 1. Käyttäjä voi kirjautua sisään ja ulos sekä luoda uuden tunnuksen.
