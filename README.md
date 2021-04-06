@@ -30,4 +30,6 @@ Sovelluksessa näkyy vapaasti käyttäjien lisättyjä parkkipaikkoja ja niihin 
 
 ### Sovelluksen tilanne
 
-1. Kättäjä pystyy luomaan käyttäjätunnuksen ja kirjautumaan sisään.
+- [x] Käyttäjä pystyy luomaan käyttäjätunnuksen ja kirjautumaan sisään.
+- [x] Käyttäjä voi lisätä parkkipaikan
+- [ ] Käyttäjä voi varata parkkipaikan käyttöön
