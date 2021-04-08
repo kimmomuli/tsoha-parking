@@ -31,12 +31,6 @@ CREATE TABLE comments(
     comment TEXT
 );
 
-CREATE TABLE fafourites(
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users,
-    parkinglot_id INTEGER REFERENCES parkinglot
-);
-
 CREATE TABLE stars(
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users,

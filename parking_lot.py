@@ -3,7 +3,6 @@ from app import app
 from db import db
 import user
 
-
 def add_new(description, price, city, address):
     user_id = user.get_id()
     if user_id != 0:
@@ -67,10 +66,25 @@ def city_results(city):
 
 
 def give_comment(parkking_lot_id, comment):
-     user_id = user.get_id()
-     sql = "INSERT INTO comments (parkinglot_id, user_id, comment) VALUES (:parkinglot_id, :user_id, :comment)"
-     db.session.execute(sql, {"parkinglot_id":parkking_lot_id, "user_id":user_id, "comment":comment})
-     db.session.commit()
+    try:
+        user_id = user.get_id()
+        sql = "INSERT INTO comments (parkinglot_id, user_id, comment) VALUES (:parkinglot_id, :user_id, :comment)"
+        db.session.execute(sql, {"parkinglot_id":parkking_lot_id, "user_id":user_id, "comment":comment})
+        db.session.commit()
+        return True
+    except:
+        return False
+
+def get_comment(id):
+    sql = "SELECT U.username, C.comment FROM users U, comments C WHERE parkinglot_id=:id AND U.id = C.user_id"
+    result = db.session.execute(sql, {"id":id})
+    return result.fetchall()
+
+def get_lot(id):
+    sql = "SELECT U.username, P.reserved, P.description, P.price, L.city, L.address \
+        FROM users U,parkinglot P, location L WHERE P.id=2 AND L.parkinglot_id = P.id AND U.id = P.owner_id"
+    result = db.session.execute(sql, {"id":id})
+    return result.fetchall()
 
 def give_stars():
     pass
