@@ -11,10 +11,15 @@ def add_new(description, price, city, address):
                 VALUES (:owner_id, 0, 0, :description, :price, NOW(), :visible)"
             db.session.execute(sql, {"owner_id":user_id, "description":description, "price":price, "visible":1})
             db.session.commit()
+            #add location
             sql = "SELECT id FROM parkinglot WHERE owner_id=:user_id AND description=:description AND price=:price AND visible=1"
             result = db.session.execute(sql, {"user_id":user_id, "description":description, "price":price})
             id = result.fetchone()[0]
             add_location(id, city, address)
+            #add stars
+            sql = "INSERT INTO stars (parkinglot_id, star_count, star_sum) VALUES (:id, 0, 0)"
+            db.session.execute(sql, {"id":id})
+            db.session.commit()
             return True
         except:
             return False
@@ -86,5 +91,7 @@ def get_lot(id):
     result = db.session.execute(sql, {"id":id})
     return result.fetchall()
 
-def give_stars():
-    pass
+# def give_stars(id, stars):
+#     sql = "UPDATE stars SET star_count=star_count+1, star_sum=star_sum+:=stars WHERE parkinglot_id=2"
+#     db.session.execute(sql, {"stars":stars})
+#     db.session.commit()

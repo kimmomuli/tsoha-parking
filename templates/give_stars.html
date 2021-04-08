@@ -1,0 +1,15 @@
+{% if session.user_id %}
+<a href="/home">Takaisin</a>
+<h1>Anna tähtiä</h1>
+<br>
+<form action="/give_stars/{{ id }}" method="POST">
+<p>Tähdet:</p>
+<input type="radio" name="stars" value="sv"> 0<br>
+<input type="radio" name="stars" value="fi"> 1<br>
+<input type="radio" name="stars" value="sv"> 2<br>
+<input type="radio" name="stars" value="en"> 3<br>
+<input type="radio" name="stars" value="sv"> 4<br>
+<input type="radio" name="stars" value="en" checked> 5<br>
+<input type="submit" value="Anna tähdet">
+</form>
+{% endif %}

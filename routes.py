@@ -106,3 +106,13 @@ def read_comments(id):
     comments = parking_lot.get_comment(id)
     lot = parking_lot.get_lot(id)
     return render_template("comments.html",lot = lot, comments = comments, id = id)
+
+# @app.route("/new_stars/<int:id>")
+# def new_stars(id):
+#     return render_template("give_stars.html", id = id)
+
+# @app.route("/give_stars/<int:id>", methods=["POST"])
+# def give_stars(id):
+#     stars = request.form["stars"]
+#     parking_lot.give_stars(id, stars)
+#     return redirect("/home")

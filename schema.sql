@@ -33,7 +33,6 @@ CREATE TABLE comments(
 
 CREATE TABLE stars(
     id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users,
     parkinglot_id INTEGER REFERENCES parkinglot,
     star_count INTEGER,
     star_sum INTEGER
