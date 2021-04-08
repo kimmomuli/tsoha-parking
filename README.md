@@ -33,7 +33,8 @@ Sovelluksessa näkyy vapaasti käyttäjien lisättyjä parkkipaikkoja ja niihin 
 - [x] Käyttäjä pystyy luomaan käyttäjätunnuksen ja kirjautumaan sisään.
 - [x] Käyttäjä voi lisätä parkkipaikan ja poistaa oman parkkipaikan
 - [x] Käyttäjä voi varata parkkipaikan käyttöön ja lopettaa käytön
-- [ ] Käyttäjä voi arvioida parkkipaikan
+- [x] Käyttäjä voi kommentoida parkkipaikkaa
+- [ ] Käyttäjä voi antaa tähtiä parkkipaikalle
 - [x] Käyttäjä voi hakea parkkipaikkoja sijainnilla
 - [ ] Ylläpitäjän toiminnot
 - [ ] Kartta ja siihen liittyvät toiminnot
