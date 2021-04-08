@@ -38,4 +38,5 @@ Sovelluksessa näkyy vapaasti käyttäjien lisättyjä parkkipaikkoja ja niihin 
 - [ ] Ylläpitäjän toiminnot
 - [ ] Kartta ja siihen liittyvät toiminnot
 - [ ] Ulkoasun toteutus
+- [ ] Tietoturva
 - [ ] Koodin oikoluku ja siistiminen
