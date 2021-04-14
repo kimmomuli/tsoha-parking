@@ -39,7 +39,7 @@ Sovellus ei toimi, koska en saanut käyttöön luomaani tietokantaa ja en ehtiny
 - [x] Käyttäjä voi kommentoida parkkipaikkaa
 - [ ] Käyttäjä voi antaa tähtiä parkkipaikalle
 - [x] Käyttäjä voi hakea parkkipaikkoja sijainnilla
-- [ ] Ylläpitäjän toiminnot
+- [x] Ylläpitäjän toiminnot
 - [ ] Kartta ja siihen liittyvät toiminnot
 - [ ] Ulkoasun toteutus
 - [ ] Tietoturva
