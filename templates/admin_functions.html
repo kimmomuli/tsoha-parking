@@ -1,0 +1,44 @@
+{% if admin %}
+
+<h1>Olet ylläpitäjä</h1>
+<a href="/logout">Kirjaudu ulos</a>
+<hr>
+<a href="/home">Etusivu</a>
+<hr>
+<a href="/admin_users">Käyttäjät</a>
+<hr>
+<form action="/city_results" method="GET">
+Kaupunki: <input type="text" name="city">
+<input type="submit" value="Hae">
+</form>
+{% if lots %}
+<p>Parkkipaikkoja:</p>
+<ol type="1">
+{% for lot in lots %}
+
+<li>
+<p>Kaupunki: {{ lot[6] }}</p>
+<p>Osoite: {{ lot[7] }}</p>
+<p>Omistaja: {{ lot[1] }}</p>
+<p>Kuvaus: {{ lot[3] }}</p>
+
+{% if lot[2] == 0 %}
+<p>Paikka vapaana</p>
+<a href="/admin_book/{{ lot[0] }}">Varaa käyttöön</a>
+{% else %}
+<p>Paikka varattu</p>
+<a href="/admin_stop_using/{{ lot[0] }}">Lopeta käyttö</a>
+{% endif %}
+<a href="/admin_delete_parking_lot/{{ lot[0] }}">Poista parkkipaikka</a>
+<a href="/read_comments/{{ lot[0] }}">Lue kommentteja</a>
+<p>Hinta: {{ lot[4] }}</p>
+</li>
+<br>
+
+{% endfor %}
+</ol>
+{% endif %}
+
+{% else %}
+<p>Et ole ylläpitäjä</p>
+{% endif %}

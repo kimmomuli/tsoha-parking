@@ -6,6 +6,7 @@
 <hr>
 <a href="/home">Takaisin etusivulle</a>
 <hr>
+{% if lots %}
 <p>My parks:</p>
 <ol type="1">
 {% for lot in lots %}
@@ -19,4 +20,5 @@
 </li>
 {% endfor %}
 </ol>
+{% endif %}
 {% endif %}

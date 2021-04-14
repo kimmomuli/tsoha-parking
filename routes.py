@@ -1,8 +1,7 @@
 from flask import Flask, render_template
 from app import app
 from flask import redirect, render_template, request, session
-import user
-import parking_lot
+import user, parking_lot, admin
 
 
 @app.route("/")
@@ -59,7 +58,7 @@ def new_park():
 
 @app.route("/home")
 def home():
-    return render_template("home.html", lots = parking_lot.get_all())
+    return render_template("home.html", lots = parking_lot.get_all(), admin = user.is_admin())
 
 @app.route("/delete_parking_lot/<int:id>")
 def delete_parking_lot(id):
@@ -75,7 +74,7 @@ def control():
 @app.route("/book/<int:id>")
 def book(id):
     if parking_lot.book(id):
-        return render_template("home.html", lots = parking_lot.get_all())
+        return redirect("/home")
     else:
         return render_template("error.html", message = "Jokin meni vikaan")
 
@@ -97,7 +96,7 @@ def comment(id):
 def new_comment(id):
     comment = request.form["comment"]
     if parking_lot.give_comment(id, comment):
-        return redirect("/home")
+        return redirect("/read_comments/"+str(id))
     else:
         return render_template("error.html", message = "Kommentin antaminen ei onnistunut")
 
@@ -116,3 +115,40 @@ def read_comments(id):
 #     stars = request.form["stars"]
 #     parking_lot.give_stars(id, stars)
 #     return redirect("/home")
+
+#Admin functions
+@app.route("/admin_functions")
+def admin_fucntions():
+    return render_template("admin_functions.html", admin = user.is_admin(), lots = parking_lot.get_all())
+
+@app.route("/admin_delete_parking_lot/<int:id>")
+def admin_delete_parking_lot(id):
+    if parking_lot.delete(id):
+        return redirect("/admin_functions")
+    else:
+        return render_template("error.html", message="Jokin meni vikaan")
+
+@app.route("/admin_book/<int:id>")
+def admin_book(id):
+    if parking_lot.book(id):
+        return redirect("/admin_functions")
+    else:
+        return render_template("error.html", message = "Jokin meni vikaan")
+
+@app.route("/admin_stop_using/<int:id>")
+def admin_stop_using(id):
+    parking_lot.stop_using(id)
+    return redirect("/admin_functions")
+
+@app.route("/admin_users")
+def admin_users():
+    return render_template("user_list.html", users = admin.get_users(), admin = user.is_admin())
+
+@app.route("/admin_delete_user/<int:id>")
+def admin_delete_user(id):
+    if admin.delete_user(id):
+        return redirect("/admin_users")
+    else:
+        return render_template("error.html", message = "Käyttäjän poisto ei onnistunut")
+
+#Admin functions end

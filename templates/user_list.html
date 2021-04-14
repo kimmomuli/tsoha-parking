@@ -1,0 +1,21 @@
+{% if admin %}
+<h1>Lista käyttäjistä</h1>
+<hr>
+<a href="/home">Takaisin etusivulle</a>
+<hr>
+<ol type="1">
+{% for user in users %}
+{% if session.user_id != user[0] %}
+<li>
+    <p>Käyttäjänimi: {{ user[1] }}</p>
+    {% if user[2] == 1 %}
+    <p>Käyttäjä on ylläpitäjä</p>
+    {% else %}
+    <p>Käyttäjä ei ole ylläpitäjä</p>
+    {% endif %}
+    <a href="/admin_delete_user/{{ user[0] }}">Poista käyttäjä</a>
+</li>
+{% endif %}
+{% endfor %}
+</ol>
+{% endif %}

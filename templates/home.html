@@ -2,6 +2,11 @@
 <h1>Moi {{ session.username }}! Tervetuloa käyttämään parkkeeraussovellusta</h1>
 <a href="/logout">Kirjaudu ulos</a>
 <hr>
+{% if admin %}
+<h3>Olet ylläpitäjä</h3>
+<a href="/admin_functions">Ylläpitäjän toiminnot</a>
+<hr>
+{% endif %}
 <a href="/add_parkinglot">Lisää parkkipaikka</a>
 <hr>
 <a href="/control">Hallitse omia parkkipaikkoja</a>
@@ -10,6 +15,7 @@
 Kaupunki: <input type="text" name="city">
 <input type="submit" value="Hae">
 </form>
+{% if lots %}
 <p>Parkkipaikkoja:</p>
 <ol type="1">
 {% for lot in lots %}
@@ -38,5 +44,8 @@ Kaupunki: <input type="text" name="city">
 <br>
 {% endfor %}
 </ol>
+{% else %}
+<p>Ei yhtään varattaavaa parkkipaikkaa</p>
+{% endif %}
 
 {% endif %}

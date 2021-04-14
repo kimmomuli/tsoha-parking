@@ -39,7 +39,7 @@ def delete(id):
 def get_all():
     sql = "SELECT P.id, U.username, P.reserved, P.description, P.price, P.who_reserved_id, L.city, L.address \
         FROM location L, parkinglot P, users U \
-        WHERE P.visible=1 AND owner_id = U.id AND P.id = L.parkinglot_id ORDER BY P.time"
+        WHERE P.visible=1 AND P.owner_id = U.id AND P.id = L.parkinglot_id AND U.visible=1 ORDER BY P.time"
     return db.session.execute(sql).fetchall()
 
 def book(id):

@@ -3,7 +3,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from db import db
 
 def login(username, password):
-    sql = "SELECT password, id FROM users WHERE username=:username"
+    sql = "SELECT password, id FROM users WHERE username=:username AND visible = 1"
     result = db.session.execute(sql, {"username":username})
     user = result.fetchone()
     if user == None:
@@ -29,6 +29,14 @@ def create(username, password):
     except:
         return False
     return login(username, password)
+
+def is_admin():
+    sql = "SELECT admin FROM users WHERE id=:id"
+    result = db.session.execute(sql, {"id":get_id()})
+    if result.fetchall()[0][0] == 1:
+        return True
+    else:
+        return False
 
 def get_id():
     return session.get("user_id",0)
