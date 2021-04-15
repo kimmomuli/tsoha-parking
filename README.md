@@ -37,7 +37,7 @@ Sovellus ei toimi, koska en saanut käyttöön luomaani tietokantaa ja en ehtiny
 - [x] Käyttäjä voi lisätä parkkipaikan ja poistaa oman parkkipaikan
 - [x] Käyttäjä voi varata parkkipaikan käyttöön ja lopettaa käytön
 - [x] Käyttäjä voi kommentoida parkkipaikkaa
-- [ ] Käyttäjä voi antaa tähtiä parkkipaikalle
+- [x] Käyttäjä voi antaa tähtiä parkkipaikalle
 - [x] Käyttäjä voi hakea parkkipaikkoja sijainnilla
 - [x] Ylläpitäjän toiminnot
 - [ ] Kartta ja siihen liittyvät toiminnot
