@@ -1,9 +1,9 @@
-<form action="/create" method="POST">
-Käyttäjätunnus: <br>
-<input type="text" name="username" size="20">
-<br>
-Salasana: <br>
-<input type="password" name="password" size="20">
-<br>
-<input type="submit" value="Luo Käyttäjä">
+{% extends "login_layout.html" %}
+{% block content %}
+<form class="box" action="/create" method="POST">
+    <h1>Luo käyttäjätunnus</h1>
+    <input type="text" name="username" placeholder="Käyttäjätunnus"> 
+    <input type="password" name="password" placeholder="Salasana"> 
+    <input type="submit" name="" value="Luo Käyttäjä" href="#">
 </form>
+{% endblock %}
