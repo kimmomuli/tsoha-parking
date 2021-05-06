@@ -17,7 +17,6 @@ Sovelluksessa näkyy vapaasti käyttäjien lisättyjä parkkipaikkoja ja niihin 
 ### Sovelluksen tilanne
 
 [Herokun linkki](https://tsoha-parking.herokuapp.com/)
-Sovellus ei toimi, koska en saanut käyttöön luomaani tietokantaa ja en ehtinyt saada apua. (Eli komentorivillä ei voimi komento heroku psql)
 
 - [x] Käyttäjä pystyy luomaan käyttäjätunnuksen ja kirjautumaan sisään.
 - [x] Käyttäjä voi lisätä parkkipaikan ja poistaa oman parkkipaikan
