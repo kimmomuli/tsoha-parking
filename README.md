@@ -17,7 +17,6 @@ Sovelluksessa näkyy vapaasti käyttäjien lisättyjä parkkipaikkoja ja niihin 
 ### Sovelluksen tilanne
 
 [Herokun linkki](https://tsoha-parking.herokuapp.com/)
-Sovellus ei toimi, koska en saanut käyttöön luomaani tietokantaa ja en ehtinyt saada apua. (Eli komentorivillä ei voimi komento heroku psql)
 
 - [x] Käyttäjä pystyy luomaan käyttäjätunnuksen ja kirjautumaan sisään.
 - [x] Käyttäjä voi lisätä parkkipaikan ja poistaa oman parkkipaikan
@@ -26,8 +25,30 @@ Sovellus ei toimi, koska en saanut käyttöön luomaani tietokantaa ja en ehtiny
 - [x] Käyttäjä voi antaa tähtiä parkkipaikalle
 - [x] Käyttäjä voi hakea parkkipaikkoja sijainnilla
 - [x] Ylläpitäjän toiminnot
-- [ ] Käyttäjä voi lisätä kuvan
 - [ ] Ulkoasun toteutus
 - [ ] Tietoturva
 - [ ] Koodin oikoluku ja siistiminen
 - [ ] Heroku
+
+
+### Ohjeet
+
+- Luo virtuaaliympäristö
+
+  `python3 -m venv venv`
+  
+- Käynnistä virtuaaliympäristö
+
+  `source venv/bin/activate`
+  
+- Asenna kaikki tarvittavat riippuvuudet
+
+  `pip install -r requirements.txt`
+  
+-  Luo tarvittavat taulut tietokantaan
+
+   `psql < schema.sql`
+
+- Käynnistä sovellus
+
+  `flask run`
