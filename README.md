@@ -16,7 +16,7 @@ Sovelluksessa näkyy vapaasti käyttäjien lisättyjä parkkipaikkoja ja niihin 
 
 ### Sovelluksen tilanne
 
-[Herokun linkki](https://tsoha-parking.herokuapp.com/)
+[Herokun linkki](https://tsoha-park.herokuapp.com/)
 
 - [x] Käyttäjä pystyy luomaan käyttäjätunnuksen ja kirjautumaan sisään.
 - [x] Käyttäjä voi lisätä parkkipaikan ja poistaa oman parkkipaikan
